@@ -1,0 +1,4 @@
+# shuttle-template-yew workspace definition
+
+[workspace]
+members = [ "server", "frontend" ]

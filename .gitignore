@@ -1,0 +1,9 @@
+# shuttle-template-yew .gitignore definitions
+
+target/
+
+dist/
+
+server/target/
+
+server/dist/
