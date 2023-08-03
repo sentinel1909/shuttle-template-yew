@@ -377,7 +377,7 @@ dependencies = [
 
 [[package]]
 name = "frontend"
-version = "0.1.0"
+version = "1.0.0"
 dependencies = [
  "yew",
 ]
@@ -1744,7 +1744,7 @@ dependencies = [
 
 [[package]]
 name = "shuttle-template-yew"
-version = "0.1.0"
+version = "1.0.0"
 dependencies = [
  "axum",
  "shuttle-axum",
