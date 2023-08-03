@@ -1,5 +1,7 @@
 # shuttle-template-yew .gitignore definitions
 
+.vscode
+
 target/
 
 dist/
