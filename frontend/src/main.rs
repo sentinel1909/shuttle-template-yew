@@ -3,6 +3,7 @@
 // dependencies
 use yew::prelude::*;
 
+// a single app component, renders the text "Welcome to Yew!"
 #[function_component]
 fn App() -> Html {
     html! {
@@ -12,6 +13,7 @@ fn App() -> Html {
     }
 }
 
+// main function, renders the app component to the screen
 fn main() {
     yew::Renderer::<App>::new().render();
 }

@@ -1,10 +1,12 @@
-# Yew and Axum (hosted with Shuttle)
+# Yew and Axum Starter Template (hosted with Shuttle)
 
 ## Overview
-This is a template that allows you to start an app with the [Yew](https://yew.rs) web framework for Rust, and host it on [Shuttle](https://shuttle.rs). It is relatively unopinionated and ready for you to add what you need. The Yew frontend web files are contained in the `/frontend` folder and are built with the [trunk](https://trunkrs.dev) deployment and packaging tool. The Yew frontend is served up from an Axum web server, contained in the `/server` folder.  The Axum server has two routes:
+This is a template that allows you to start an app with the [Yew](https://yew.rs) web framework for Rust, and host it on [Shuttle](https://shuttle.rs). It is minimalist and ready for you to add what you need. The Yew frontend web files are contained in the `/frontend` folder and are built with the [trunk](https://trunkrs.dev) deployment and packaging tool. The Yew frontend is served up from an Axum web server, contained in the `/server` folder.  The Axum server has two routes:
 
 - / : which serves up the Yew website
 - /health_check : which returns a 200 OK response with no body
+
+This app template uses client side rendering, which is the default in Yew. In the client side rendering scheme, when the user visits a website, the server sends a skeleton HTML file without any content and a WebAssembly bundle, to the browser. Everything is then rendered client side by the WebAssembly bundle.
 
 ## Setup
 After cloning this repo and making it your own, you'll need to get the following basic tooling installed.
@@ -49,6 +51,15 @@ This template leverages the [Just](https://github.com/casey/just) command runner
 `just shuttle-deploy` : deploys the built frontend, with its Axum server, to the shuttle cloud environment for deployment
 
 ## Notes
-Per the discussion regarding the shuttle-static-folder resource, because this template is built as a cargo workspace, the `/dist` folder containing the built Yew frontend must live in the root of the workspace.  The build artifacts are output to `/server/dist` (via the Trunk.toml configuration file located in the `/frontend` directory) by default, to support running locally with `cargo shuttle run`. The `just shuttle-deploy` recipe copies the build artifacts to `/dist` in the root of the crate workspace.
+Per the [discussion](https://docs.shuttle.rs/resources/shuttle-static-folder) in the Shuttle docs regarding the shuttle-static-folder resource, because this template is built as a cargo workspace, the `/dist` folder containing the built Yew frontend must live in the root of the workspace.  The build artifacts are output to `/server/dist` (via the Trunk.toml configuration file located in the `/frontend` directory) by default, to support running locally with `cargo shuttle run`. The `just shuttle-deploy` recipe copies the build artifacts to `/dist` in the root of the crate workspace.
+
+## Building from Here
+This template has just enough to get you going. You'll likely want to add:
+
+- yew-router (for routing between pages of your app)
+- [telemetry](https://docs.shuttle.rs/introduction/telemetry) to the server portion of the app
+- CSS (a plain vanilla CSS with a reset is incorporated), but you might want to use Tailwind CSS or another similar CSS framework
+- wasm-logger crate for logging from WebAssembly to the console
+- web-sys crate (bindings for all Web APIs)
 
 

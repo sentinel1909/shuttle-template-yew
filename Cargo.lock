@@ -377,7 +377,7 @@ dependencies = [
 
 [[package]]
 name = "frontend"
-version = "1.0.0"
+version = "1.1.0"
 dependencies = [
  "yew",
 ]
@@ -1591,6 +1591,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "server"
+version = "1.1.0"
+dependencies = [
+ "axum",
+ "shuttle-axum",
+ "shuttle-runtime",
+ "shuttle-static-folder",
+ "tokio",
+ "tower-http",
+]
+
+[[package]]
 name = "sha1"
 version = "0.10.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1740,18 +1752,6 @@ dependencies = [
  "serde",
  "shuttle-service",
  "tracing",
-]
-
-[[package]]
-name = "shuttle-template-yew"
-version = "1.0.0"
-dependencies = [
- "axum",
- "shuttle-axum",
- "shuttle-runtime",
- "shuttle-static-folder",
- "tokio",
- "tower-http",
 ]
 
 [[package]]

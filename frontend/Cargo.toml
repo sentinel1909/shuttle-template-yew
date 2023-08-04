@@ -1,7 +1,15 @@
 [package]
 name = "frontend"
-version = "1.0.0"
+version = "1.1.0"
 edition = "2021"
+description = "Template frontend app using the Yew web framework for Rust"
+readme = "README.md"
+authors = ["Jeffery D. Mitchell", "<sentinel1909@jeff-mitchell.dev"]
+repository = "https://github.com/sentinel1909/shuttle-template-yew"
+license = 'MIT'
+keywords = ["yew, shuttle"]
+categories = ["template"]
+publish = false
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

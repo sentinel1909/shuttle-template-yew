@@ -1,6 +1,6 @@
 # just task runner configuration for shuttle-template-yew
 
-dev:
+run-dev:
   cd frontend && trunk serve --open
 
 build-release:
