@@ -1,4 +1,5 @@
 # shuttle-template-yew workspace definition
 
 [workspace]
+resolver = "2"
 members = [ "server", "frontend" ]
