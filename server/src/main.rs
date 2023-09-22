@@ -15,12 +15,10 @@ async fn health_check() -> impl IntoResponse {
 // and makes the health_check endpoint available at the /health_check route
 // serves a frontend built with Yew at /
 #[shuttle_runtime::main]
-async fn main(
-    #[shuttle_static_folder::StaticFolder(folder = "dist")] dist_folder: PathBuf,
-) -> shuttle_axum::ShuttleAxum {
+async fn main() -> shuttle_axum::ShuttleAxum {
     let router = Router::new()
         .route("/health_check", get(health_check))
-        .nest_service("/", ServeDir::new(dist_folder));
+        .nest_service("/", ServeDir::new(PathBuf::from("dist")));
 
     Ok(router.into())
 }

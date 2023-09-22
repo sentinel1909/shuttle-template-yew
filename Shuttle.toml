@@ -1,3 +1,7 @@
 # shuttle-template-yew project name definition file
 
 name = "shuttle-template-yew"
+
+assets = [
+  "dist/*"
+]
