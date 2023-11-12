@@ -1,6 +1,6 @@
 [package]
 name = "server"
-version = "1.5.0"
+version = "1.6.0"
 edition = "2021"
 description = "Template frontend app using the Yew web framework for Rust"
 readme = "README.md"
@@ -13,7 +13,7 @@ publish = false
 
 [dependencies]
 axum = "0.6.20"
-shuttle-axum = "0.29.0"
-shuttle-runtime = "0.29.0"
-tokio = "1.33.0"
+shuttle-axum = "0.32.0"
+shuttle-runtime = "0.32.0"
+tokio = "1.34.0"
 tower-http = { version = "0.4.4", features = [ "fs"] }

@@ -1,4 +1,4 @@
 # shuttle-template-yew Trunk configuration file
 
 [build]
-dist = "../server/dist"
+dist = "../dist"
