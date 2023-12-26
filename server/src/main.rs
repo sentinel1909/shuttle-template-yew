@@ -1,24 +1,24 @@
 // src/main.rs
 
 // dependencies
-use axum::{http::StatusCode, response::IntoResponse, routing::get, Router};
-use std::path::PathBuf;
-use tower_http::services::ServeDir;
+use rocket::fs::FileServer;
+use rocket::get;
+use rocket::response::content::RawJson;
+use rocket::response::status;
+use rocket::routes;
 
-// health_check endpoint
-// serves a 200 OK response with no body
-async fn health_check() -> impl IntoResponse {
-    StatusCode::OK
+// health_check endpoint handler
+#[get("/")]
+fn health_check() -> status::Accepted<RawJson<&'static str>> {
+    status::Accepted(RawJson("{ \"message\": \"200 OK\" }"))
 }
 
-// main function, annotated with shuttle_runtime::main, spins up an axum server
-// and makes the health_check endpoint available at the /health_check route
-// serves a frontend built with Yew at /
+// main function
 #[shuttle_runtime::main]
-async fn main() -> shuttle_axum::ShuttleAxum {
-    let router = Router::new()
-        .route("/health_check", get(health_check))
-        .nest_service("/", ServeDir::new(PathBuf::from("dist")));
+async fn main() -> shuttle_rocket::ShuttleRocket {
+    let rocket = rocket::build()
+        .mount("/health_check", routes![health_check])
+        .mount("/", FileServer::from("dist"));
 
-    Ok(router.into())
+    Ok(rocket.into())
 }

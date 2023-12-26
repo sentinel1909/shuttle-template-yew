@@ -1,19 +1,15 @@
 [package]
 name = "server"
-version = "1.7.0"
+version = "2.12.26"
 edition = "2021"
 description = "Template frontend app using the Yew web framework for Rust"
 readme = "README.md"
 authors = ["Jeffery D. Mitchell", "<sentinel1909@jeff-mitchell.dev"]
 repository = "https://github.com/sentinel1909/shuttle-template-yew"
 license = 'MIT'
-keywords = ["axum, shuttle"]
-categories = ["template"]
 publish = false
 
 [dependencies]
-axum = "0.6.20"
-shuttle-axum = "0.34.0"
-shuttle-runtime = "0.34.0"
-tokio = "1.34.0"
-tower-http = { version = "0.4.4", features = [ "fs"] }
+rocket = "0.5.0"
+shuttle-rocket = "0.35.2"
+shuttle-runtime = "0.35.2"
