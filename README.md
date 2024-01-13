@@ -8,6 +8,8 @@ This is a template that allows you to start an app with the [Yew](https://yew.rs
 
 This app template uses client side rendering, which is the default in Yew. In the client side rendering scheme, when the user visits a website, the server sends a skeleton HTML file without any content and a WebAssembly bundle, to the browser. Everything is then rendered client side by the WebAssembly bundle.
 
+Tailwind is incorporated for styles. The trunk build tool incorporates the Tailwind CLI, so very little additional work is needed.  The template provides a pre-made `tailwind.config.js` in the root of the `frontend` folder, which can serve as a starting  point. Simply style your Yew components with Tailwind classes and trunk will take care of the rest.
+
 ## Setup
 After cloning this repo and making it your own, you'll need to get the following basic tooling installed.
 
@@ -58,7 +60,6 @@ This template has just enough to get you going. You'll likely want to add:
 
 - yew-router (for routing between pages of your app)
 - [telemetry](https://docs.shuttle.rs/introduction/telemetry) to the server portion of the app
-- CSS (a plain vanilla CSS with a reset is incorporated), but you might want to use Tailwind CSS or another similar CSS framework
 - wasm-logger crate for logging from WebAssembly to the console
 - web-sys crate (bindings for all Web APIs)
 
