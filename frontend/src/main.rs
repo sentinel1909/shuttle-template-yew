@@ -8,7 +8,7 @@ use yew::prelude::*;
 fn App() -> Html {
     html! {
         <div>
-            <h1>{ "Welcome to Yew!"}</h1>
+            <h1 class="text-3xl">{ "Welcome to Yew!"}</h1>
         </div>
     }
 }
