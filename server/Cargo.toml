@@ -11,5 +11,5 @@ publish = false
 
 [dependencies]
 rocket = "0.5.0"
-shuttle-rocket = "0.36.0"
-shuttle-runtime = "0.36.0"
+shuttle-rocket = "0.39.0"
+shuttle-runtime = "0.39.0"
