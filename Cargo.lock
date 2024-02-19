@@ -554,7 +554,7 @@ dependencies = [
 
 [[package]]
 name = "frontend"
-version = "2.1.0"
+version = "2.39.0"
 dependencies = [
  "yew",
 ]
@@ -2326,7 +2326,7 @@ dependencies = [
 
 [[package]]
 name = "server"
-version = "2.1.0"
+version = "2.39.0"
 dependencies = [
  "rocket",
  "shuttle-rocket",
