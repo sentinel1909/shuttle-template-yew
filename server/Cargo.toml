@@ -1,6 +1,6 @@
 [package]
-name = "server"
-version = "2.44.0"
+name = "shuttle-template-yew-server"
+version = "2.46.0"
 edition = "2021"
 description = "Template frontend app using the Yew web framework for Rust"
 readme = "README.md"
@@ -11,5 +11,5 @@ publish = false
 
 [dependencies]
 rocket = "0.5.0"
-shuttle-rocket = "0.44.0"
-shuttle-runtime = "0.44.0"
+shuttle-rocket = "0.46.0"
+shuttle-runtime = "0.46.0"

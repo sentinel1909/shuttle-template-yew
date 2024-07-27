@@ -1,24 +1,26 @@
 // src/main.rs
 
 // dependencies
+use rocket::{Build, Rocket, get, routes};
 use rocket::fs::FileServer;
-use rocket::get;
-use rocket::response::content::RawJson;
-use rocket::response::status;
-use rocket::routes;
+use rocket::http::Status;
 
-// health_check endpoint handler
-#[get("/")]
-fn health_check() -> status::Accepted<RawJson<&'static str>> {
-    status::Accepted(RawJson("{ \"message\": \"200 OK\" }"))
+// health_check handler
+#[get("/health_check")]
+fn health_check() -> Status {
+    Status::Ok
 }
 
-// main function
+// function to create a rocket instance
+fn create() -> Rocket<Build> {
+    rocket::build()
+        .mount("/api", routes!(health_check))
+        .mount("/", FileServer::from("dist"))
+}
+
 #[shuttle_runtime::main]
 async fn main() -> shuttle_rocket::ShuttleRocket {
-    let rocket = rocket::build()
-        .mount("/health_check", routes![health_check])
-        .mount("/", FileServer::from("dist"));
+    let rocket = create();
 
     Ok(rocket.into())
 }
