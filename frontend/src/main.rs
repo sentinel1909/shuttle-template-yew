@@ -13,7 +13,7 @@ fn App() -> Html {
             </header>
             <main>
                 <section>
-                    <h2>{ "Today is: 2024-07-27" }</h2>
+                    <h2>{ "Template last update: 2024-07-31" }</h2>
                     <article>
                         <p>{ "Site compiled to WebAssembly, using the Rust frontend framework called Yew" }</p>
                     </article>
