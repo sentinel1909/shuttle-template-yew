@@ -1,8 +1,8 @@
-# Yew and Rocket Starter Template (hosted with Shuttle)
+# Yew and Axum Starter Template (hosted with Shuttle)
 
 ## Overview
 
-This is a template that allows you to start an app with the [Yew](https://yew.rs) web framework for Rust, and host it on [Shuttle](https://shuttle.rs). It is minimalist and ready for you to add what you need. The Yew frontend web files are contained in the `/frontend` folder and are built with the [trunk](https://trunkrs.dev) deployment and packaging tool. The Yew frontend is served up from a Rocket web server, contained in the `/server` folder. The Rocket server has two routes:
+This is a template that allows you to start an app with the [Yew](https://yew.rs) web framework for Rust, and host it on [Shuttle](https://shuttle.rs). It is minimalist and ready for you to add what you need. The Yew frontend web files are contained in the `/frontend` folder and are built with the [trunk](https://trunkrs.dev) deployment and packaging tool. The Yew frontend is served up from an Axum web server, contained in the `/server` folder. The Rocket server has two routes:
 
 - `/` : which serves up the Yew website
 - `/health_check` : returns an empty body and 200 OK message
