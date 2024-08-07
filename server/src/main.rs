@@ -1,26 +1,25 @@
 // src/main.rs
 
 // dependencies
-use rocket::{Build, Rocket, get, routes};
-use rocket::fs::FileServer;
-use rocket::http::Status;
+use axum::{
+    http::StatusCode, response::IntoResponse, routing::get, Router,
+};
+use tower_http::services::ServeDir;
 
-// health_check handler
-#[get("/health_check")]
-fn health_check() -> Status {
-    Status::Ok
+// health_check handler; returns a 200 OK with empty body
+async fn health_check() -> impl IntoResponse {
+    StatusCode::OK
 }
 
-// function to create a rocket instance
-fn create() -> Rocket<Build> {
-    rocket::build()
-        .mount("/api", routes!(health_check))
-        .mount("/", FileServer::from("dist"))
-}
-
+// main function
 #[shuttle_runtime::main]
-async fn main() -> shuttle_rocket::ShuttleRocket {
-    let rocket = create();
+async fn main() -> shuttle_axum::ShuttleAxum {
 
-    Ok(rocket.into())
+    // build the router
+    let api = Router::new()
+        .route("/api/health_check", get(health_check))
+        .nest_service("/", ServeDir::new("public"));
+
+    // start the service
+    Ok(api.into())
 }

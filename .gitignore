@@ -1,11 +1,10 @@
 # shuttle-template-yew .gitignore definitions
 
+# Visual Studio Code Settings
 .vscode
 
-target/
+# Build artifacts
+target
 
-dist/
-
-server/target/
-
-server/dist/
+# Site
+public

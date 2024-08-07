@@ -1,6 +1,6 @@
 [package]
 name = "frontend"
-version = "2.47.0"
+version = "3.0.1"
 edition = "2021"
 description = "Template frontend app using the Yew web framework for Rust"
 readme = "README.md"

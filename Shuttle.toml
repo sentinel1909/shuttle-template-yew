@@ -3,5 +3,5 @@
 name = "shuttle-template-yew"
 
 assets = [
-  "dist/*"
+  "public/*"
 ]
