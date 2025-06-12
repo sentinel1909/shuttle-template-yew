@@ -3,8 +3,11 @@
 # Visual Studio Code Settings
 .vscode
 
+# Environment variables
+.env
+
 # Build artifacts
-target
+/target
 
 # Site
-public
+/public

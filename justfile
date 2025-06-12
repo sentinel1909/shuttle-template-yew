@@ -1,16 +1,16 @@
 # just task runner configuration for shuttle-template-yew
 
-run-dev:
-  cd frontend && trunk serve --open
+# use Powershell instead of sh
+set shell := ["powershell.exe", "-c"]
 
-build-release:
-  cd frontend && trunk clean && trunk build --release
+dev:
+  cd frontend; trunk serve --open
 
-project-init:
-  cargo shuttle init
+build:
+  cd frontend; trunk clean; trunk build --release
 
-shuttle-run:
-  cargo shuttle run
+local:
+  shuttle run
 
-shuttle-deploy:
-  cargo shuttle project restart && cargo shuttle deploy
+deploy:
+  shuttle deploy
