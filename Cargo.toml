@@ -6,7 +6,7 @@ default-members = ["server"]
 resolver = "3"
 
 [workspace.package]
-version = "4.0.0"
+version = "4.0.1"
 edition = "2024"
 description = "Template full stack app using the Yew web framework for Rust"
 authors = ["Jeffery D Mitchell", "<crusty-rustacean@jeff-mitchell.dev>"]
